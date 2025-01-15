@@ -11,11 +11,13 @@ import {
   Linking,
 } from 'react-native';
 import Svg, { G, Path } from 'react-native-svg';
+import '../../global.css';
+import { verifyInstallation } from 'nativewind';
 
 export const App = () => {
   const [whatsNextYCoord, setWhatsNextYCoord] = useState<number>(0);
   const scrollViewRef = useRef<null | ScrollView>(null);
-
+  verifyInstallation();
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -31,6 +33,7 @@ export const App = () => {
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}
         >
+          <Text className="text-rose-700">Hi from NativeWind</Text>
           <View style={styles.section}>
             <Text style={styles.textLg}>Hello there,</Text>
             <Text
